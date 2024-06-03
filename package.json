@@ -1,7 +1,7 @@
 {
-  "name": "Book-app",
+  "name": "Film-library",
   "version": "1.0.0",
-  "description": "Cool book app",
+  "description": "Film app",
   "main": "app.js",
   "type": "module",
   "scripts": {
@@ -10,17 +10,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AlariCode/8-javascript-advanced-1.git"
+    "url": "git+https://github.com/BorisGafurov/searchFilm.git"
   },
   "keywords": [
-    "books"
+    "film"
   ],
-  "author": "Anton Larichev",
+  "author": "Boris Gafurov",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/AlariCode/8-javascript-advanced-1/issues"
+    "url": "https://github.com/BorisGafurov/searchFilm.git"
   },
-  "homepage": "https://purpleschool.ru",
+  "homepage": "https://github.com/BorisGafurov",
   "devDependencies": {
     "@eslint/js": "^9.3.0",
     "@rollup/plugin-node-resolve": "^15.2.3",
