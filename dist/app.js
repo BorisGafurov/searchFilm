@@ -1036,15 +1036,15 @@
 			this.el.classList.add('header');
 			this.el.innerHTML = `
 			<div>
-				<img src="/static/logo.svg" alt="Логотип" />
+				<img src="./static/logo.svg" alt="Логотип" />
 			</div>
 			<div class="menu">
 				<a class="menu__item" href="#">
-					<img src="/static/search.svg" alt="Поиск иконка" />
+					<img src="./static/search.svg" alt="Поиск иконка" />
 					Поиск фильмов
 				</a>
 				<a class="menu__item" href="#favorites">
-					<img src="/static/favorites.svg" alt="Избранное иконка" />
+					<img src="./static/favorites.svg" alt="Избранное иконка" />
 					Избранное
 					<div class="menu__counter">
 						${this.appState.favorites.length}
@@ -1197,9 +1197,9 @@
 					class="search__input"
 					value="${this.state.searchQuery ? this.state.searchQuery : ''}"
 				/>
-				<img src="/static/search.svg" alt="Иконка поиска" />
+				<img src="./static/search.svg" alt="Иконка поиска" />
 			</div>
-			<button aria-label="Искать"><img src="/static/search-white.svg" alt="Иконка поиска" /></button>
+			<button aria-label="Искать"><img src="./static/search-white.svg" alt="Иконка поиска" /></button>
 		`;
 			this.el.querySelector('button').addEventListener('click', this.search.bind(this));
 			this.el.querySelector('input').addEventListener('keydown', (event) => {
