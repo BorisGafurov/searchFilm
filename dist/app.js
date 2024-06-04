@@ -1262,14 +1262,11 @@
 	        },
 	      });
 
-	      console.log('Offset:', offset);
-
 	      if (!res.ok) {
 	        throw new Error(`HTTP error! status: ${res.status}`);
 	      }
 
 	      const data = await res.json();
-	      console.log('Data:', data);
 	      return data;
 	    } catch (error) {
 	      console.error('There has been a problem with your fetch operation:', error);
