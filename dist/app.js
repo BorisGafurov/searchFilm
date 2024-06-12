@@ -1072,14 +1072,14 @@
 
 		#deleteFromFavorites() {
 			this.appState.favorites = this.appState.favorites.filter(
-				b => b.key !== this.cardState.key
+				b => b.id !== this.cardState.id
 			);
 		}
 
 		render() {
 			this.el.classList.add('card');
 			const existInFavorites = this.appState.favorites.find(
-				b => b.key == this.cardState.key
+				b => b.id == this.cardState.id
 			);
 			this.el.innerHTML = `
 			<div class="card__image">
@@ -1087,7 +1087,7 @@
 			</div>
 			<div class="card__info">
 				<div class="card__tag">
-					${this.cardState.genres[1].name || 'Не задано'}
+					${this.cardState.genres[1]?.name || 'Не задано'}
 				</div>
 				<div class="card__name">
 					${this.cardState.name}
@@ -1201,7 +1201,15 @@
 			</div>
 			<button aria-label="Искать"><img src="./static/search-white.svg" alt="Иконка поиска" /></button>
 		`;
-			this.el.querySelector('button').addEventListener('click', this.search.bind(this));
+
+			this.el.querySelector('button').addEventListener('click', () => {
+			 if (this.state.searchQuery === undefined) {
+				this.el.querySelector('search__wrapper').classList.add('error__input');
+			 }
+			 console.log(this.el);
+			 this.el.querySelector('search__wrapper').classList.remove('error__input');
+			return this.search.bind(this)});
+			
 			this.el.querySelector('input').addEventListener('keydown', (event) => {
 				if (event.code === 'Enter') {
 					this.search();
@@ -1252,7 +1260,7 @@
 	    }
 	  }
 
-	  async loadList(q, offset) {
+	  async loadList(q) {
 	    try {
 	      const res = await fetch(`https://api.kinopoisk.dev/v1.4/movie/search?page=1&limit=6&query=${encodeURIComponent(q)}`, {
 	        method: 'GET',
@@ -1261,6 +1269,7 @@
 	          'X-API-KEY': 'HHR0RJF-KVC4PVB-KQDJG0D-5T3RJSV'
 	        },
 	      });
+
 
 	      if (!res.ok) {
 	        throw new Error(`HTTP error! status: ${res.status}`);

@@ -17,14 +17,14 @@ export class Card extends DivComponent {
 
 	#deleteFromFavorites() {
 		this.appState.favorites = this.appState.favorites.filter(
-			b => b.key !== this.cardState.key
+			b => b.id !== this.cardState.id
 		);
 	}
 
 	render() {
 		this.el.classList.add('card');
 		const existInFavorites = this.appState.favorites.find(
-			b => b.key == this.cardState.key
+			b => b.id == this.cardState.id
 		);
 		this.el.innerHTML = `
 			<div class="card__image">
@@ -32,7 +32,7 @@ export class Card extends DivComponent {
 			</div>
 			<div class="card__info">
 				<div class="card__tag">
-					${this.cardState.genres[1].name || 'Не задано'}
+					${this.cardState.genres[1]?.name || 'Не задано'}
 				</div>
 				<div class="card__name">
 					${this.cardState.name}

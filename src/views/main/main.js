@@ -45,7 +45,7 @@ export class MainView extends AbstractView {
     }
   }
 
-  async loadList(q, offset) {
+  async loadList(q) {
     try {
       const res = await fetch(`https://api.kinopoisk.dev/v1.4/movie/search?page=1&limit=6&query=${encodeURIComponent(q)}`, {
         method: 'GET',
@@ -54,6 +54,7 @@ export class MainView extends AbstractView {
           'X-API-KEY': 'HHR0RJF-KVC4PVB-KQDJG0D-5T3RJSV'
         },
       });
+
 
       if (!res.ok) {
         throw new Error(`HTTP error! status: ${res.status}`);

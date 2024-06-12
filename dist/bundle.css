@@ -150,6 +150,10 @@
 	flex: 1;
 }
 
+.error__input {
+	border-color: red;
+}
+
 .search__input::placeholder {
 	color: #494949;
 }
