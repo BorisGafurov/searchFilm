@@ -2,11 +2,15 @@
 
 Для запуска проекта:
 
-1. Устанавливаем расширение ESLint.
+1. npm init
 
-2. Запускаем терминал.
+2.
 
-3. npm init @eslint/config:
+3. Устанавливаем расширение ESLint.
+
+4. Запускаем терминал.
+
+5. npm init @eslint/config:
 
 Выбираем нужные пункты из списка:
 
@@ -27,4 +31,4 @@ npm i -D rollup-plugin-import-css
 
 6. npm run build
 
-7. live-server
+7. npm run start
