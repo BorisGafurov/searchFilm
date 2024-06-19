@@ -8,6 +8,7 @@
 
 3. npm init @eslint/config:
 Выбираем нужные пункты из списка:
+
 a) To check syntax and find problems.
 b) JavaScript modules (import/export).
 c) None of these.
