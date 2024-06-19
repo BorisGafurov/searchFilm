@@ -7,6 +7,7 @@
 2. Запускаем терминал.
 
 3. npm init @eslint/config:
+
 Выбираем нужные пункты из списка:
 
 a) To check syntax and find problems.
